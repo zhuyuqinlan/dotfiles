@@ -1,0 +1,7 @@
+# Astronvim / Neovim
+lazy-lock.json
+*.log
+*.swp
+*.swo
+*.tmp
+
