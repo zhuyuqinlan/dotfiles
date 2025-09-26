@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.yaml" },
 }
 -- import/override with your plugins folder
