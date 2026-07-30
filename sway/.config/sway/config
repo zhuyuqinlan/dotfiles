@@ -1,3 +1,4 @@
+include /etc/sway/config.d/*
 # 设置win为mod键
 set $mod Mod4
 
@@ -139,4 +140,4 @@ bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" /tmp/screenshot.png && swappy -
 exec ~/.config/sway/autostart.sh
 
 # 设置屏幕缩放
-output eDP-1 scale 1.5
+output eDP-1 scale 1.25
