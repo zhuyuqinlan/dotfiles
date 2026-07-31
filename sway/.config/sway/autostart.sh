@@ -7,4 +7,4 @@ fcitx5 &
 swaybg -i ~/.config/sway/wallpaper.png -m fill &
 
 # 护眼
-redshift &
+gammastep &

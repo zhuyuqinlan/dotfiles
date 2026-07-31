@@ -136,8 +136,11 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 # ────────── 选区截图并编辑 ──────────
 bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" /tmp/screenshot.png && swappy -f /tmp/screenshot.png
 
+# 设置pkexec
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # 开机启动
 exec ~/.config/sway/autostart.sh
 
 # 设置屏幕缩放
-output eDP-1 scale 1.25
+output eDP-1 scale 1.2
