@@ -3,7 +3,7 @@
 	"position":"top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": ["custom/network-speed"],
-	"modules-right": ["tray","network", "pulseaudio", "backlight", "cpu", "memory", "battery", "clock"],
+	"modules-right": ["tray","network", "pulseaudio", "backlight", "cpu", "memory", "temperature", "battery", "idle_inhibitor", "clock"],
 
 	"sway/workspaces": {},
 
@@ -19,7 +19,7 @@
 	"clock": {
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": "{:%Y-%m-%d}",
-		"format": "󰥔  {:%H:%M}"
+		"format": "{:%H:%M}"
 	},
 
 	"backlight": {
@@ -75,5 +75,18 @@
     "format": "󰻠 {usage}%",
     "interval": 2,
     "tooltip": true
+},
+"idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "永不息屏",
+        "deactivated": "自动息屏"
+    },
+    "tooltip": true
+},
+"temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+    "format": "󰔏 {temperatureC}°C",
+    "interval": 5
 }
 }

@@ -109,24 +109,24 @@ default_border none
 for_window [app_id="Alacritty"] border pixel 2
 for_window [app_id="Alacritty"] opacity 0.95
 
-# 锁屏（改用 swaylock）
-bindsym $mod+Shift+b exec swaylock
+# 锁屏
+bindsym $mod+Shift+b exec swaylock -f
 
 # 电源管理
 # 休眠（将数据存入硬盘）
-bindsym $mod+Shift+x exec systemctl hibernate 
+# bindsym $mod+Shift+x exec systemctl hibernate
 # 睡眠（将数据存入内存）
 bindsym $mod+Shift+s exec systemctl suspend
 
 # 亮度
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym $mod+XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym $mod+XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # 音量 (用 wpctl 代替 amixer)
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym $mod+XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym $mod+XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym $mod+XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym $mod+XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 # ────────── 全屏截图到剪贴板 ──────────
 bindsym Print exec grim - | wl-copy
 
@@ -135,6 +135,9 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 # ────────── 选区截图并编辑 ──────────
 bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" /tmp/screenshot.png && swappy -f /tmp/screenshot.png
+
+# 自动锁屏关屏幕
+exec swayidle -w timeout 180 'swaylock -f' timeout 185 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
 # 设置pkexec
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
