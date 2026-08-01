@@ -32,8 +32,15 @@
 	color: #d2d2d2;
 }
 
-#tray, #pulseaudio, #network, #backlight, #battery, #clock, #memory{
-	padding: 0 6px;
+#tray, #pulseaudio, #network, #backlight, #battery, #clock, #memory, #custom-network-speed, #cpu {
+	background-color: #000000;
+	border-radius: 6px;
+	padding: 0 10px;
+	margin: 0 2px;
 	color: #d2d2d2;
+	min-height: 0;
 }
 
+#pulseaudio {
+	font-family: 'Font Awesome 5 Free', 'Noto Sans', 'Symbols Nerd Font';
+}
