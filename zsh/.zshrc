@@ -69,7 +69,7 @@ alias ll='eza -lah --icons'
 alias la='eza -a --icons'
 
 # cat增强
-alias cat='bat'
+# alias cat='bat'
 
 # 常用
 alias cls='clear'
@@ -113,19 +113,42 @@ alias ya='yazi'
 # Arch Linux
 # =========================
 
-alias update='sudo pacman -Syu'
+# 更新系统（官方仓库 + AUR）
+update() {
+    paru -Syu
+}
 
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+# 清理系统（孤儿包 + paru缓存）
+cleanup() {
+    echo "== 清理孤儿包 =="
+
+    local orphans
+    orphans=$(pacman -Qtdq)
+
+    if [[ -n "$orphans" ]]; then
+        sudo pacman -Rns --noconfirm $orphans
+    else
+        echo "没有孤儿包"
+    fi
+
+    echo "== 清理 pacman 缓存 =="
+    sudo paccache -r
+
+    echo "== 清理 paru AUR 缓存 =="
+    paru -Sc --noconfirm
+
+    echo "== 清理完成 =="
+}
 
 
 # =========================
 # Node
 # =========================
 
-alias ni='npm install'
-alias nr='npm run'
-alias nrd='npm run dev'
-alias nrb='npm run build'
+# alias ni='npm install'
+# alias nr='npm run'
+# alias nrd='npm run dev'
+# alias nrb='npm run build'
 
 
 # =========================
@@ -140,10 +163,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # =========================
 
 # 自动进入目录
-setopt AUTO_CD
+# setopt AUTO_CD
 
 # 命令拼错自动修正
-setopt CORRECT
+# setopt CORRECT
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
