@@ -118,29 +118,6 @@ update() {
     paru -Syu
 }
 
-# 清理系统（孤儿包 + paru缓存）
-cleanup() {
-    echo "== 清理孤儿包 =="
-
-    local orphans
-    orphans=$(pacman -Qtdq)
-
-    if [[ -n "$orphans" ]]; then
-        sudo pacman -Rns --noconfirm $orphans
-    else
-        echo "没有孤儿包"
-    fi
-
-    echo "== 清理 pacman 缓存 =="
-    sudo paccache -r
-
-    echo "== 清理 paru AUR 缓存 =="
-    paru -Sc --noconfirm
-
-    echo "== 清理完成 =="
-}
-
-
 # =========================
 # Node
 # =========================

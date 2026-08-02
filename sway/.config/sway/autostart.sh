@@ -1,4 +1,6 @@
 #!/bin/bash
+# xwayland
+# xwayland-satellite &
 
 # 输入法
 fcitx5 &

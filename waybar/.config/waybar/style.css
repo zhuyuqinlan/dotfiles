@@ -32,13 +32,29 @@
 	color: #d2d2d2;
 }
 
-#tray, #pulseaudio, #network, #backlight, #battery, #clock, #memory, #custom-network-speed, #cpu, #idle_inhibitor, #temperature {
+#tray, #pulseaudio, #network, #backlight, #battery, #clock, #memory, #custom-network-speed, #cpu, #idle_inhibitor, #temperature, #custom-power-profiles {
 	background-color: #181212;
 	border-radius: 6px;
 	padding: 0 10px;
 	margin: 0 2px;
 	color: #d2d2d2;
 	min-height: 0;
+}
+
+#custom-power-profiles.performance {
+	color: #FF6B6B;
+}
+
+#custom-power-profiles.balanced {
+	color: #7DB8FF;
+}
+
+#custom-power-profiles.power-saver {
+	color: #7ED957;
+}
+
+#custom-power-profiles.error {
+	color: #ff5555;
 }
 
 #pulseaudio {

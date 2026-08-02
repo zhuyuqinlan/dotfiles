@@ -3,7 +3,7 @@
 	"position":"top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": ["custom/network-speed"],
-	"modules-right": ["tray","network", "pulseaudio", "backlight", "cpu", "memory", "temperature", "battery", "idle_inhibitor", "clock"],
+	"modules-right": ["tray","network", "pulseaudio", "backlight", "cpu", "memory", "temperature", "battery", "idle_inhibitor", "custom/power-profiles", "clock"],
 
 	"sway/workspaces": {},
 
@@ -83,6 +83,12 @@
         "deactivated": "自动息屏"
     },
     "tooltip": true
+},
+"custom/power-profiles": {
+    "exec": "/home/zhuyuqinlan/.config/waybar/scripts/power-profiles.sh",
+    "interval": 5,
+    "return-type": "json",
+    "on-click": "/home/zhuyuqinlan/.config/waybar/scripts/power-profiles-toggle.sh"
 },
 "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",

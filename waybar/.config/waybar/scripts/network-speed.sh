@@ -171,7 +171,7 @@ fi
 
 
 
-printf '{"text": "%s ↓ %s ↑", "tooltip": "Interface: %s\\nDownload: %s\\nUpload: %s", "class": "%s"}\n' \
+printf '{"text": "%s ↓ %s ↑", "tooltip": "网卡: %s\\n下载: %s\\n上传: %s", "class": "%s"}\n' \
     "$rx_formatted" \
     "$tx_formatted" \
     "$IFACE" \

@@ -13,4 +13,8 @@ export XMODIFIERS=@im=fcitx
 export EDITOR=vim
 export VISUAL=gnome-text-editor
 
+# 解决Java GUI程序运行问题
+export _JAVA_AWT_WM_NONREPARENTING=1
+export STUDIO_JDK=/usr/lib/jvm/java-11-openjdk/
+
 sway
