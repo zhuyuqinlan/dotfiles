@@ -146,8 +146,9 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec wl-paste --watch cliphist store
 bindsym $mod+v exec cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
-# 开机启动
-exec ~/.config/sway/autostart.sh
+exec fcitx5
+exec swaybg -i ~/.config/sway/wallpaper.png -m fill
+exec mako
 
 # 设置屏幕缩放
 output eDP-1 scale 1.2
