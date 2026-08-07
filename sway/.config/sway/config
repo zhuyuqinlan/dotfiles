@@ -140,7 +140,7 @@ bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" /tmp/screenshot.png && swappy -
 exec swayidle -w timeout 180 'grim /tmp/lock.png && magick /tmp/lock.png -blur 0x10 -modulate 110,80,100 /tmp/lock_blur.png && swaylock -f --image /tmp/lock_blur.png; rm -f /tmp/lock.png /tmp/lock_blur.png' timeout 185 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
 # 设置pkexec
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec lxqt-policykit-agent
 
 # 剪切板
 exec wl-paste --watch cliphist store
