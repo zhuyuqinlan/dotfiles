@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IntelliJ IDEA Community Edition
+Comment=Java IDE by JetBrains
+Exec=/home/zhuyuqinlan/program/idea/bin/idea %f
+Icon=/home/zhuyuqinlan/program/idea/bin/idea.png
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=jetbrains-idea
+StartupNotify=true
+MimeType=text/plain;inode/directory;
