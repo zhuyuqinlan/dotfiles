@@ -168,3 +168,6 @@ export JAVA_HOME=$HOME/program/jdk/jdk17
 export PATH=$JAVA_HOME/bin:$PATH
 
 
+
+# opencode
+export PATH=/home/zhuyuqinlan/.opencode/bin:$PATH
