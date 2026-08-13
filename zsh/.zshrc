@@ -149,8 +149,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # =========================
 # 外观
 # =========================
-
-PROMPT='%n@%m:%~$ '
+PROMPT='%F{cyan} %n@%m%f %F{yellow}%2~%f %F{blue}❯%f '
 
 # fnm
 FNM_PATH="/home/zhuyuqinlan/.local/share/fnm"
@@ -164,10 +163,10 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # =========================
 # 环境变量
 # =========================
-export JAVA_HOME=$HOME/program/jdk/jdk17
+export EDITOR="kwrite"
+export VISUAL="kwrite"
+export JAVA_HOME=$HOME/program/jdk/17
 export PATH=$JAVA_HOME/bin:$PATH
-
-
-
+export PATH=$HOME/program/go/1.26.5/bin:$PATH
 # opencode
 export PATH=/home/zhuyuqinlan/.opencode/bin:$PATH
