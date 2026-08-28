@@ -149,8 +149,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # =========================
 # 外观
 # =========================
-PROMPT='%F{cyan} %n@%m%f %F{yellow}%2~%f %F{blue}❯%f '
-
+PROMPT='%F{cyan} %n@%m%f %F{yellow}%~%f
+%F{blue}❯%f '
 # fnm
 FNM_PATH="/home/zhuyuqinlan/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -163,8 +163,8 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # =========================
 # 环境变量
 # =========================
-export EDITOR="kwrite"
-export VISUAL="kwrite"
+export EDITOR="vim"
+export VISUAL="vim"
 export JAVA_HOME=$HOME/program/jdk/17
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH=$HOME/program/go/1.26.5/bin:$PATH
