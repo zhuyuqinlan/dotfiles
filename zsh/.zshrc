@@ -116,6 +116,7 @@ alias f='fastfetch'
 
 update() {
     sudo dnf upgrade --refresh
+    mise upgrade
 }
 
 
@@ -152,22 +153,22 @@ export PATH="$HOME/.local/bin:$PATH"
 PROMPT='%F{cyan} %n@%m%f %F{yellow}%~%f
 %F{blue}❯%f '
 # fnm
-FNM_PATH="/home/zhuyuqinlan/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "$(fnm env --shell zsh)"
-fi
-eval "$(fnm env --use-on-cd --shell zsh)"
+# FNM_PATH="/home/zhuyuqinlan/.local/share/fnm"
+# if [ -d "$FNM_PATH" ]; then
+#  export PATH="$FNM_PATH:$PATH"
+#  eval "$(fnm env --shell zsh)"
+#fi
+# eval "$(fnm env --use-on-cd --shell zsh)"
 
 
 # =========================
 # 环境变量
 # =========================
-export EDITOR="vim"
-export VISUAL="vim"
-export JAVA_HOME=$HOME/program/jdk/17
-export PATH=$JAVA_HOME/bin:$PATH
-export PATH=$HOME/program/go/1.26.5/bin:$PATH
+export EDITOR="kwrite"
+export VISUAL="kwrite"
+# export JAVA_HOME=$HOME/program/jdk/17
+# export PATH=$JAVA_HOME/bin:$PATH
+# export PATH=$HOME/program/go/1.26.5/bin:$PATH
 
 # opencode
 export PATH=/home/zhuyuqinlan/.opencode/bin:$PATH
@@ -200,3 +201,4 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+eval "$(mise activate zsh)"
